@@ -48,11 +48,11 @@ public class RecipeFileHandler {
      * @param recipeName レシピ名
      * @param ingredients 材料名
      */
-     // 
+     //
     public void addRecipe(String recipeName, String ingredients) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath,true))) {
             System.out.println(recipeName + "," + ingredients);
+            writer.newLine();
             System.out.println("Recipe added successfuly");
         } catch (IOException e) {
             System.out.println("Error reading file:" + e.getMessage());
