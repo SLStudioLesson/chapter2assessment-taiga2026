@@ -45,7 +45,7 @@ public class RecipeFileHandler {
      * 新しいレシピをrecipes.txtに追加します。<br>
      * レシピ名と材料はカンマ区切りで1行としてファイルに書き込まれます。
      *
-     * @param recipeName レシピ名
+     * @param recipeName 
      * @param ingredients 材料名
      */
      //
