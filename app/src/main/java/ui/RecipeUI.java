@@ -90,14 +90,19 @@ public class RecipeUI {
      *
      * @throws java.io.IOException 入出力が受け付けられない
      */
-    private void addNewRecipe() throws IOException {
-        System.out.print("Enter recipe name:");
-        String recipeName = reader.readLine();
+    private void addNewRecipe() {
+        try {
+            System.out.print("Enter recipe name: ");
+            String recipeName = reader.readLine();
 
-        System.out.print("Enter main ingredients (comma separated):");
-        String ingredients = reader.readLine();
+            System.out.print("Enter main ingredients (comma separated): ");
+            String ingredients = reader.readLine();
 
-        System.out.println("Recipe added successfuly.");
+            fileHandler.addRecipe(recipeName, ingredients);
+            System.out.println("Recipe added successfully.");
+        } catch (IOException e) {
+            System.out.println("Error adding recipe: " + e.getMessage());
+        }
     }
 
     /**
